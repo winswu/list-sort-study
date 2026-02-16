@@ -53,3 +53,8 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# Local project outputs
+.vscode/
+bench_results/
+build/
