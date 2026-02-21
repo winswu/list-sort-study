@@ -25,6 +25,9 @@ $(BUILD_DIR)/list_sort_bench.o: $(PERF_DIR)/list_sort_bench.c | $(BUILD_DIR)
 $(BUILD_DIR)/list_sort.o: $(KLIB)/list_sort.c | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -I$(SHIM_INC) -I$(KTOOLS_INC) -I$(KTOOLS_UAPI) -c "$<" -o $@
 
-clean:
+clean-build:
 	rm -f $(BIN) $(OBJS) list_sort_bench
 	@if [ -d "$(BUILD_DIR)" ]; then rmdir --ignore-fail-on-non-empty "$(BUILD_DIR)"; fi
+
+clean: clean-build
+	rm -rf bench_results
